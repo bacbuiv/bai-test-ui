@@ -1,0 +1,50 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --primary: #11009e;
+    --primary-hover: #1500d0;
+    --background-hover: rgb(22, 24, 35, 0.03);
+    --black: #000;
+    --white: #fff;
+    --grey: #888;
+    --text-color: #333;
+    --icon-color: #4942e4;
+    --background-color: rgba(5, 36, 212, 0.049);
+    --background-color-hover: rgba(5, 36, 212, 0.261);
+
+    --font-family: 'Roboto', sans-serif;
+
+    //DefaultLayout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    text-rendering: optimizeSpeed; // Tối ưu hiển thị tải font
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}

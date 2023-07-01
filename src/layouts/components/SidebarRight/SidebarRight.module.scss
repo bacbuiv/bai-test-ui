@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 280px;
+    padding: 20px 0 20px 20px;
+    font-size: 1.3rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+}
+
+.poster-sidebar {
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        display: none;
+    }
+}
