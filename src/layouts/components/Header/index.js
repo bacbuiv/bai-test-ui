@@ -8,6 +8,7 @@ import {
     faLanguage,
     faRightFromBracket,
     faCartArrowDown,
+    faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
@@ -46,18 +47,18 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faFacebook} />,
         title: 'Facebook',
-        href: 'https://www.facebook.com/BacVietB',
+        href: 'https://www.facebook.com/',
         separate: true,
     },
     {
         icon: <FontAwesomeIcon icon={faTelegram} />,
         title: 'Telegram',
-        href: 'https://www.facebook.com/BacVietB',
+        href: 'https://www.facebook.com/',
     },
     {
-        icon: <FontAwesomeIcon icon={faEnvelope} />,
-        title: 'Liên hệ hợp tác',
-        to: config.routes.mailPage,
+        icon: <FontAwesomeIcon icon={faHeadset} />,
+        title: 'Hỗ trợ trực tuyến',
+        to: config.routes.home,
     },
 ];
 
@@ -70,46 +71,25 @@ const MENU_USER = [
     },
 ];
 
-const testCart = [
-    {
-        src: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png',
-        price: '3.499.000',
-    },
-    {
-        src: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png',
-        price: '3.499.000',
-    },
-    {
-        src: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png',
-        price: '3.499.000',
-    },
-    {
-        src: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png',
-        price: '3.499.000',
-    },
-    {
-        src: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png',
-        price: '3.499.000',
-    },
-];
+const testCart = [];
 
 function Header() {
     const [showCart, setShowCart] = useState(false);
     const { items } = useCart();
     const currentUser = true;
 
-    const handleShowCart = () => {
-        if (items.length > 0) {
-            setShowCart(!showCart);
-        } else {
-            setShowCart(false);
-            console.log('Giỏ hàng chưa có sản phẩm ...');
-        }
-    };
+    // const handleShowCart = () => {
+    //     if (items.length > 0) {
+    //         setShowCart(!showCart);
+    //     } else {
+    //         setShowCart(false);
+    //         console.log('Giỏ hàng chưa có sản phẩm ...');
+    //     }
+    // };
 
-    const handleHide = () => {
-        setShowCart(false);
-    };
+    // const handleHide = () => {
+    //     setShowCart(false);
+    // };
 
     return (
         <header className={cx('wrapper')}>
@@ -117,27 +97,42 @@ function Header() {
                 <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="logo-header" />
                 </Link>
-                <Search />
+                {/* <Search /> */}
                 <div className={cx('login')}>
-                    {currentUser ? (
-                        <Cart
-                            data={testCart}
-                            showCart={showCart}
-                            onHideCart={handleHide}
-                        >
-                            <button
-                                className={cx('cart-btn')}
-                                onClick={handleShowCart}
-                            >
-                                <FontAwesomeIcon icon={faCartArrowDown} />
-                            </button>
-                        </Cart>
-                    ) : (
+                    {!currentUser && (
                         <>
                             <Button primary to={config.routes.login}>
                                 Đăng Nhập
                             </Button>
                             <Button outline>Đăng Ký</Button>
+                        </>
+                    )}
+                    {/* <Cart
+                        data={testCart}
+                        showCart={showCart}
+                        onHideCart={handleHide}
+                    >
+                        <button
+                            className={cx('cart-btn')}
+                            onClick={handleShowCart}
+                        >
+                            <FontAwesomeIcon icon={faCartArrowDown} />
+                        </button>
+                    </Cart> */}
+                    {currentUser && (
+                        <>
+                            <Button href="./" outline>
+                                Rút Tiền
+                            </Button>
+                            <Button href="./" primary>
+                                Nạp Tiền
+                            </Button>
+                            <div className={cx('info')}>
+                                <div className={cx('full-name')}>
+                                    Tài khoản Demo
+                                </div>
+                                <div className={cx('coin')}>9.999.999 $</div>
+                            </div>
                         </>
                     )}
 

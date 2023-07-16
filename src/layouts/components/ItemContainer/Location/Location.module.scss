@@ -1,9 +1,10 @@
 .wrapper {
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: flex-end;
     width: 150px;
-    height: 150px;
+    height: 130px;
     padding: 10px 5px 15px;
     background-color: rgba(0, 45, 150, 0.703);
     border-radius: 20px;
@@ -42,7 +43,7 @@
 @media screen and (max-width: 480px) {
     .wrapper {
         width: 120px;
-        height: 120px;
+        height: 100px;
 
         .content {
             font-size: 1.2rem;

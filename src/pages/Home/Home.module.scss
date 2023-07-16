@@ -14,6 +14,7 @@
 
 .new-product {
     width: 100%;
+    padding-top: 20px;
 
     & > h3 {
         color: var(--primary);
@@ -38,13 +39,16 @@
     .counter {
         position: absolute;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 3px;
         width: 200px;
-        height: 40px;
+        height: 60px;
         top: 5px;
         left: 50%;
         transform: translateX(-50%);
+        text-transform: uppercase;
         color: var(--white);
         background-color: var(--primary);
         border-radius: 10px;
@@ -57,7 +61,7 @@
     }
     .wrapper-location {
         position: absolute;
-        bottom: -50px;
+        bottom: -30px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -96,6 +100,15 @@
     }
 }
 
+.live-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    row-gap: 30px;
+    padding-top: 30px;
+}
+
 @media screen and (max-width: 480px) {
     .advantage {
         min-width: 345px;
@@ -119,7 +132,7 @@
         }
 
         .wrapper-location {
-            bottom: 15px;
+            bottom: 35px;
         }
     }
 
@@ -134,5 +147,10 @@
                 min-width: 150px;
             }
         }
+    }
+
+    .live-item {
+        padding-top: 0;
+        margin-top: -30px;
     }
 }

@@ -18,6 +18,10 @@
     min-height: 1000px;
     padding-top: 20px;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0.1px;
+    }
 }
 
 @media screen and (max-width: 768px) {

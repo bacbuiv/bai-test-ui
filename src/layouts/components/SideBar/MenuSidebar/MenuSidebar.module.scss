@@ -9,6 +9,12 @@
         color: var(--primary-hover);
         background-color: var(--background-hover);
     }
+
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+    }
 }
 
 .active {

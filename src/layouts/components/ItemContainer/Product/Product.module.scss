@@ -2,12 +2,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 5px;
     width: 150px;
-    height: 250px;
+    height: 200px;
     padding: 5px 8px 15px;
     border-radius: 20px;
     background-color: var(--background-color);
+    transition: all 0.6s ease;
 
     & + .wrapper {
         margin-left: 10px;
@@ -38,64 +40,77 @@
 }
 
 .icon {
-    color: var(--black);
+    color: var(--primary-hover);
 }
 
-.price {
-    padding-left: 5px;
-}
+// .price {
+//     padding-left: 5px;
+// }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     padding-bottom: 5px;
 }
 
-.tag {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    height: 20px;
-}
-
-.add {
-    position: absolute;
-    bottom: 0;
-    right: -5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 999px;
-    border: 2px solid var(--white);
+.btn-play {
+    padding: 5px 20px;
+    background-color: var(--primary-hover);
     color: var(--white);
-    background-color: var(--primary);
-    cursor: pointer;
-
-    &:hover {
-        background-color: var(--primary-hover);
-    }
-}
-
-.activeAdd {
-    background-color: red;
+    border-radius: 10px;
+    border: 2px solid var(--white);
 
     &:hover {
         background-color: red;
     }
 }
 
-.success {
+.tag {
     position: absolute;
-    top: 50%;
-    left: 10px;
-    right: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: var(--white);
-    border: 2px solid var(--primary-hover);
-    color: green;
-
-    span {
-        padding-left: 5px;
-        font-size: 1.2rem;
-        color: var(--primary);
-    }
+    top: -15px;
+    right: -5px;
+    height: 50px;
 }
+
+// .add {
+//     position: absolute;
+//     bottom: 0;
+//     right: -5px;
+//     width: 30px;
+//     height: 30px;
+//     border-radius: 999px;
+//     border: 2px solid var(--white);
+//     color: var(--white);
+//     background-color: var(--primary);
+//     cursor: pointer;
+
+//     &:hover {
+//         background-color: var(--primary-hover);
+//     }
+// }
+
+// .activeAdd {
+//     background-color: red;
+
+//     &:hover {
+//         background-color: red;
+//     }
+// }
+
+// .success {
+//     position: absolute;
+//     top: 50%;
+//     left: 10px;
+//     right: 10px;
+//     padding: 5px;
+//     border-radius: 10px;
+//     background-color: var(--white);
+//     border: 2px solid var(--primary-hover);
+//     color: green;
+
+//     span {
+//         padding-left: 5px;
+//         font-size: 1.2rem;
+//         color: var(--primary);
+//     }
+// }

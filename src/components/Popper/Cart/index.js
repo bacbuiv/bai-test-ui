@@ -3,6 +3,8 @@ import styles from './Cart.module.scss';
 import Tippy from '@tippyjs/react/headless';
 import { useCart } from 'react-use-cart';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import CartItem from './CartItem';
@@ -51,7 +53,9 @@ function Cart({ children, data = [], showCart, onHideCart }) {
                             <p>{cartTotal}</p>
                         </div>
                         <div className={cx('btn')}>
-                            <button onClick={emptyCart}>Hủy bỏ</button>
+                            <button onClick={emptyCart}>
+                                {<FontAwesomeIcon icon={faTrashCan} />} Hủy
+                            </button>
                             <button>Tiến hành thanh toán</button>
                         </div>
                     </PopperWrapper>

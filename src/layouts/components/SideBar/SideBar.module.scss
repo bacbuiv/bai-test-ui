@@ -2,6 +2,12 @@
     width: 200px;
     min-height: 1000px;
     padding: 20px 10px 0 0;
+
+    nav + nav {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--black);
+    }
 }
 
 @media screen and (max-width: 768px) {

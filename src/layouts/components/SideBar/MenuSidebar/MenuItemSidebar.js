@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import Image from '~/components/Image';
+
 const cx = classNames.bind(styles);
 
-function MenuItemSidebar({ title, to, icon }) {
+function MenuItemSidebar({ title, to, icon, src }) {
     return (
         <motion.div
             initial={{
@@ -25,7 +27,8 @@ function MenuItemSidebar({ title, to, icon }) {
                 className={(nav) => cx('menu-item', { active: nav.isActive })}
                 to={to}
             >
-                <span className={cx('icon')}>{icon}</span>
+                {icon && <span className={cx('icon')}>{icon}</span>}
+                {src && <Image src={src} />}
                 <span className={cx('title')}>{title}</span>
             </NavLink>
         </motion.div>
@@ -35,7 +38,7 @@ function MenuItemSidebar({ title, to, icon }) {
 MenuItemSidebar.propTypes = {
     title: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
-    icon: PropTypes.node.isRequired,
+    icon: PropTypes.node,
 };
 
 export default MenuItemSidebar;

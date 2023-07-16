@@ -9,6 +9,7 @@ import {
     Advantage,
     LocationItemContainer,
     ProductItemContainer,
+    LiveItemContainer,
 } from '~/layouts/components/ItemContainer';
 import { itemNewProducts, itemAllProducts } from '~/data/products';
 
@@ -27,19 +28,19 @@ function Home() {
             <Slider data={images.slideHome} />
             <div className={cx('advantage')}>
                 <Advantage
-                    src={images.legit}
-                    title="Cam kết chính hãng"
-                    note="Bao check legit"
+                    src={images.adv1}
+                    title="Nhà cái uy tín"
+                    note="Sân chơi xanh chín"
                 />
                 <Advantage
-                    src={images.fast}
-                    title="Giao hàng 24h"
-                    note="Free ship nội thành"
+                    src={images.adv2}
+                    title="Bảo mật tuyệt đối"
+                    note="Thông tin private"
                 />
                 <Advantage
-                    src={images.cheap}
-                    title="Giá thành tốt nhất"
-                    note="Chỉ từ 799.000đ"
+                    src={images.adv3}
+                    title="Nạp rút nhanh chóng"
+                    note="Cổng nạp đa dạng"
                 />
             </div>
             <motion.div
@@ -47,7 +48,7 @@ function Home() {
                 whileTap={{ cursor: 'grabbing' }}
                 ref={slideRef}
             >
-                <h3>Sản Phẩm Mới</h3>
+                <h3>Hot Game</h3>
                 <motion.div
                     className={cx('slide')}
                     drag="x"
@@ -58,6 +59,7 @@ function Home() {
                             key={item.id}
                             url={item.src}
                             title={item.title}
+                            users={item.users}
                             price={item.price}
                             isNew={item.isNew}
                             item={item}
@@ -67,31 +69,62 @@ function Home() {
             </motion.div>
             <div className={cx('poster')}>
                 <div className={cx('counter')}>
-                    <p className={cx('number')}> Hơn 5.000 Khách hàng</p>
+                    <p className={cx('number')}>89.000.000 $</p>
+                    <p>Jackpot hiện tại</p>
                 </div>
-                <img src={images.locationPoster} alt="location-poster" />
+                <img src={images.jackpot} alt="jackpot" />
                 <div className={cx('wrapper-location')}>
                     <LocationItemContainer
                         src={images.noImage}
-                        nameLocation="Tp.Hồ Chí Minh"
-                        add="381A Sư Vạn Hạnh, Q. 10"
-                        tel="0983764669"
+                        nameLocation="User Name"
+                        add="id: 21321321321"
+                        tel="0983764***"
                     />
                     <LocationItemContainer
                         src={images.noImage}
-                        nameLocation="Hà Nội"
-                        add="75A ngõ 61 Lê Văn Lương, Cầu Giấy"
-                        tel="0983764669"
+                        nameLocation="User Name"
+                        add="id: 21321321321"
+                        tel="0983764***"
                     />
                     <LocationItemContainer
                         src={images.noImage}
-                        nameLocation="Đà Nẵng"
-                        add="126 Lê Duẩn, Hải Châu"
-                        tel="0983764669"
+                        nameLocation="User Name"
+                        add="id: 21321321321"
+                        tel="0983764***"
                     />
                 </div>
             </div>
-            <div className={cx('wrapper-product')}>
+            <div className={cx('live-item')}>
+                <LiveItemContainer src={images.liveBongDa} />
+                <LiveItemContainer src={images.liveXoSo} />
+                <LiveItemContainer src={images.liveCasino} />
+                <LiveItemContainer src={images.liveCasino} />
+            </div>
+            <motion.div
+                className={cx('new-product', 'new-product')}
+                whileTap={{ cursor: 'grabbing' }}
+                ref={slideRef}
+            >
+                <h3>New Game</h3>
+                <motion.div
+                    className={cx('slide')}
+                    drag="x"
+                    dragConstraints={{ right: 0, left: -width }}
+                >
+                    {itemNewProducts.map((item) => (
+                        <ProductItemContainer
+                            key={item.id}
+                            url={item.src}
+                            title={item.title}
+                            users={item.users}
+                            // price={item.price}
+                            // isNew={item.isNew}
+                            item={item}
+                        />
+                    ))}
+                </motion.div>
+            </motion.div>
+            {/* <div className={cx('wrapper-product')}>
                 <h3>Xem nhiều hơn</h3>
                 <div className={cx('all-product')}>
                     {itemAllProducts.map((item) => (
@@ -106,7 +139,7 @@ function Home() {
                         />
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -31,6 +31,9 @@ function ItemProduct({ src, title, price, to, isNew, isSale }) {
             ) : (
                 <del className={cx('price')}>{price}</del>
             )}
+            <p className={cx('to-game')} href="./">
+                Chơi Ngay
+            </p>
         </NavLink>
     );
 }
@@ -38,7 +41,7 @@ function ItemProduct({ src, title, price, to, isNew, isSale }) {
 ItemProduct.propTypes = {
     title: PropTypes.string.isRequired,
     to: PropTypes.string,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.number,
     src: PropTypes.string.isRequired,
     isNew: PropTypes.bool,
     isSale: PropTypes.bool,
